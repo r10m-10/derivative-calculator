@@ -1,0 +1,105 @@
+* {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: clamp(48px, 10vw, 96px);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    width: 60%;
+    box-shadow: 0 0 20px rgba(25, 200, 100, 0.2), 0 0 60px rgba(25, 200, 100, 0.08);
+    border-radius: 8px;
+    max-width: 700px;
+    width: 60%;
+    font-size: 18px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 30px rgba(25, 200, 100, 0.5), 0 0 80px rgba(25, 200, 100, 0.15);
+    border-color: #19c864;
+}
+
+.accent{
+    text-shadow: 0 0 20px rgba(25, 200, 100, 0.4), 0 0 60px rgba(25, 200, 100, 0.15);
+}
+
+.accent2{
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.15);
+}
+
+.form-control {
+    height: 70px;   
+}
+
+.btn {
+    height: 70px;
+}
+
+.accordion {
+    max-width: 700px;
+    width: fit-content;
+    margin-top: 24px;
+}
+
+.accordion-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #19c864;
+    border-radius: 8px !important;
+}
+
+.accordion-button {
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: #19c864;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+}
+
+.output-box {
+    position: relative;
+    display:none;
+    width: 90%;
+    max-width: 700px;
+    margin-top: 24px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #19c864;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(25, 200, 100, 0.2), 0 0 60px rgba(25, 200, 100, 0.08);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+    min-height: 60px !important;
+}
+
+#clear {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 14px;
+    padding: 4px 12px;
+    height: auto;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivative Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+        <h1 class="mb-4 shadow-lg"><span class="accent text-success">DERIVATIVE</span> <span
+                class="accent2">CALCULATOR</span></h1>
+
+        <div class="input-group input-group-lg">
+            <span class="input-group-text text-bg-dark border border-success fw-bold" id="inputGroup-sizing-lg">f(x) =
+            </span>
+            <input type="text" class="form-control form-control-lg text-bg-dark border border-success fw-bold"
+                id="floatingInputGroup1" placeholder="Expression">
+            <button class="btn btn-outline-success" type="button" id="button-addon2">CALCULATE</button>
+        </div>
+
+        <div class="output-box" id="output-box">
+            <p class="output-label fw-bold">f'(x) = <span id="output-result">3x^2 - 5sin(x)</span></p>
+            <button type="button" class="btn btn-outline-danger" id="clear">Clear</button>
+        </div>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        INSTRUCTIONS
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <strong>Welcome to the Derivative Calculator!</strong><br><br>
+                        <strong> OVERVIEW:</strong><br>
+                        Using this calculator, you would be able to differentiate (almost) all types of functions you
+                        find in
+                        the wild. The calculator also supports the use of Product rule, Quotient rule and Chain rule
+                        automatically.<br><br>
+                        <strong>SUPPORTED FUNCTIONS:</strong><br>
+                        1. Power Functions (x<sup>2</sup>, 2x<sup>3</sup>, etc.)<br>
+                        2. Exponential Functions (2<sup>x</sup>, e<sup>x</sup>, etc.)<br>
+                        3. Variable Exponential functions (x<sup>x</sup>, (sin(x))<sup>(3x)</sup>, etc.)<br>
+                        4. Trigonometric Functions (sin(x), cos(x<sup>2</sup>), etc.)<br>
+                        5. Inverse Trigonometric Functions (arcsin(x), arccos(x), etc,)<br>
+                        6. Logarithmic Functions (ln(x), log<sub>10</sub>(x))<br>
+                        AND A COMBINATION OF ALL! <br><br>
+                        <strong>SYNTAX RULES:</strong><br>
+                        1. <strong>Pow, Exp & VarExp:</strong> use <strong>'^'</strong> as operator (
+                        (2x+1)<strong>^</strong>2, e<strong>^</strong>(3x+2), (2x+1)<strong>^</strong>(3x) )<br>
+                        2. <strong>Trig, InvTrig & Log:</strong> variable should be in brackets (sin(x), arccos(x),
+                        ln(x)) <br>
+                        3. For <strong>log<sub>base</sub>x</strong>, write it as "logbase(x)"
+                        (log<strong>10</strong>(x), log<strong>2</strong>(x))<br>
+                        4. <strong>Prod rule:</strong> use <strong>'*'</strong> identifier between consecutive terms
+                        ((e^x)<strong>*</strong>(sin(x)))<br>
+                        5. <strong>Quot rule:</strong> use <strong>'/'</strong> identifier between consecutive terms
+                        ((e^x)<strong>/</strong>(sin(x)))<br>
+                        <strong>NOTE: '*' AND '/' ARE SPECIAL IDENTIFIERS AND SHOULD ONLY BE USED IN CASES SPECIFIED
+                            ABOVE</strong><br>
+                        6. <strong>Prod, Quot, VarExp:</strong> Consecutive terms to be enclosed in parenthesis.<br>
+                        example:-
+                        <strong>(</strong>sin(x)<strong>)</strong><strong>*</strong><strong>(</strong>x^2<strong>)</strong>,
+                        <strong>(</strong>2x<strong>)</strong><strong>^</strong><strong>(</strong>x^2<strong>)</strong>,
+                        <strong>(</strong>x^2<strong>)</strong><strong>/</strong><strong>(</strong>(2x+1)<strong>)</strong><br>
+                        7. Do not use fractions, only use decimals.<br><br>
+                        <strong>SAMPLE EXPRESSION:</strong><br>
+                        f(x) = (x^3)*(sin(2x+1)) + e^(cos(x)) - (arctan(x^2)) / (log10(2x+5))
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
