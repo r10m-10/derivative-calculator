@@ -64,7 +64,6 @@ def get_type(term, term_dict):
 
 def get_terms(exp:str):
     exp = exp.replace(" ", "").lower()
-    
     Terms, op = {}, {}
     LP, L_OP =  get_parenthesis(exp), []
     cur_index = 0
