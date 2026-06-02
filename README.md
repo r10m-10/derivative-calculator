@@ -35,5 +35,7 @@ LOCAL SETUP:
 
 LIVE DEMO:
 https://derivative-calculator-g91r.onrender.com/
+OR
+https://derivative-calculator-delta.vercel.app/
 
 (made by: r10m-10)
