@@ -286,6 +286,10 @@ def differentiate(exp):
         der = t_der[0]
 
     return der
+
+def calc_val():
+    pass
+
 wrt = 'x'
 
 app = Flask(__name__)
@@ -300,6 +304,3 @@ def calculate():
     exp = data['expression']
     result = differentiate(exp)
     return jsonify({'result': result})
-
-if __name__ == '__main__':
-    app.run(debug=True)
